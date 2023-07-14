@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap");
+
+body {
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nanum Pen Script";
+  min-height: 100vh;
+  margin: 0px;
+}
+
+@media (min-width: 750px) {
+  .App {
+    width: 900px;
+  }
+}
+
+@media (max-width: 750px) {
+  .App {
+    width: 90vw;
+  }
+}
+
+#root {
+  background-color: rgb(224, 228, 240);
+  box-shadow: rgba(58, 58, 104, 0.2) 0px 7px 29px 0px;
+}
+
+.App {
+  min-height: 100vh;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+/* Header */
+header {
+  padding: 20px 0 20px 0;
+
+  color: rgb(45, 110, 110);
+
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+
+header > div {
+  /* display: flex; */
+}
+
+header .head_text {
+  width: 50%;
+  font-size: 40px;
+  justify-content: center;
+}
+
+.AddBoard {
+  width: 150px;
+}
+
+.AddMenu {
+  font-size: 23px;
+  padding-bottom: 5px;
+}
+
+.Menu-List {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  font-size: 28px;
+}
+
+.AddBoard input {
+  border: none;
+  width: 100px;
+  height: 30px;
+  margin-right: 2px;
+  border-radius: 3px;
+  text-align: center;
+}
+
+/*  MyButton  */
+.MyButton {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  margin-left: 5px;
+  /* padding: 10px 20px 10px 20px; */
+
+  font-size: 18px;
+
+  white-space: nowrap;
+  font-family: "Nanum Pen Script";
+}
+
+.MyButton_default {
+  background-color: rgb(199, 213, 238);
+  color: black;
+}
+
+.MyButton_positive {
+  background-color: rgb(162, 228, 224);
+  color: black;
+}
+
+.MyButton_negative {
+  background-color: rgb(236, 182, 165);
+  color: black;
+}
+
+.BoardItem {
+  width: 180px;
+}
+
+.BoardItem div {
+  padding-top: 5px;
+  left: 10px;
+  font-size: 20px;
+}
+
+.boardName {
+  margin-right: 10px;
+  font-size: 18px;
+}
+.Home .Home-position {
+  margin-left: 30px;
+}
+
+.Home .List {
+  padding-top: 20px;
+}
+
+.Home h2 {
+  padding-top: 25px;
+}
+
+.Home .List-Button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  padding: 5px 15px 5px 15px;
+  margin-top: 45px;
+  margin-left: 57px;
+
+  font-size: 18px;
+
+  white-space: nowrap;
+  font-family: "Nanum Pen Script";
+
+  background-color: rgb(53, 56, 61);
+  color: wheat;
+}
+
+.PostList {
+  display: flex;
+  justify-content: space-between;
+}
+
+.PostList .Post-Option {
+  margin-top: 60px;
+}
+
+.Post-Item {
+  margin-top: 10px;
+  margin-right: 200px;
+  font-size: 20px;
+}
+
+.PostItem button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  padding: 5px 15px 5px 15px;
+  /* margin-top: 45px; */
+  margin-left: 5px;
+
+  font-size: 18px;
+
+  white-space: nowrap;
+  font-family: "Nanum Pen Script";
+
+  background-color: rgb(53, 56, 61);
+  color: wheat;
+}

@@ -8,6 +8,7 @@ import New from './pages/New';
 import Edit from './pages/Edit';
 
 import './App.css';
+import BoardPage from './pages/BoardPage';
 
 const boardReducer = (state, action) => {
   let newState = [];
@@ -145,7 +146,8 @@ function App() {
               <div className="App">
                 <Routes>
                   <Route path='/' element={<Home />} />
-                  <Route path='/board/:id' element={<Board />} />
+                  <Route path='/board' element={<Board />} />
+                  <Route path='/board/:id' element={<BoardPage />} />
                   <Route path='/new' element={<New />} />
                   <Route path='/edit/:id' element={<Edit />} />
                   <Route path='/post/:id' element={<Post />} />

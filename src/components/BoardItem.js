@@ -2,12 +2,14 @@ import { useContext, useState } from "react";
 
 import { BoardDispatchContext } from "../App";
 import MyButton from "./MyButton";
+import { Link } from "react-router-dom";
 
 const BoardItem = ({ boardName, id }) => {
   const { onBoardEdit, onBoardRemove } = useContext(BoardDispatchContext);
   const [hover, setHover] = useState(false);
 
-  const handelEdit = () => {
+
+  const handleEdit = () => {
     onBoardEdit(id);
   }
   const handleRemove = () => {
@@ -26,10 +28,10 @@ const BoardItem = ({ boardName, id }) => {
   return (
     <div className="BoardItem" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
       <div className="boardName">
-        <a href={url}>{boardName}</a>
+        <Link to={url}>{boardName}</Link>
         {hover && (
           <>
-            <MyButton text={"수정"} type={"negative"} onClick={handelEdit} />
+            <MyButton text={"수정"} type={"negative"} onClick={handleEdit} />
             <MyButton text={"삭제"} type={"negative"} onClick={handleRemove} />
           </>
         )}

@@ -35,25 +35,31 @@ const Post = () => {
   if (!data) {
     return <div>로딩중입니다...</div>
   } else {
-    <div>
-      <Header headText={`${getStringDate(new Date(data.date))}`} />
-      <button onClick={() => navigate(-1)}>뒤로가기</button>
-      <button onClick={() => navigate(`/edit/${data.id}`)}>수정하기</button>
-      <button onClick={handleRemove}>삭제하기</button>
-      <article>
-        <section>
-          <h2>제목: {data.title}</h2>
-        </section>
-        <section>
-          <h4>게시글</h4>
-          <div>
-            <p>{data.content}</p>
-          </div>
-        </section>
-      </article>
-    </div>
+    return (
+      <div>
+        <Header headText={`${getStringDate(new Date(data.date))}`} />
+        <button className="Post_button_1" onClick={() => navigate(-1)}>뒤로가기</button>
+        <button className="Post_button_2" onClick={() => navigate(`/edit/${data.id}`)}>수정하기</button>
+        <button className="Post_button_3" onClick={handleRemove}>삭제하기</button>
+        <article>
+          <section className="Post_h2">
+            <h2><b>제목</b></h2>
+            <div>
+              <p className="PostTitle">
+                {data.title}
+              </p>
+            </div>
+          </section>
+          <section>
+            <h2><b>게시글</b></h2>
+            <div className="PostContent">
+              <p>{data.content}</p>
+            </div>
+          </section>
+        </article>
+      </div>
+    )
   }
-  return <div></div>
 };
 
 export default Post;

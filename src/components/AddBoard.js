@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { BoardDispatchContext, BoardStateContext } from "../App";
+import { BoardDispatchContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import MyButton from "./MyButton";
 
@@ -26,11 +26,13 @@ const AddBoard = () => {
     setIsHover(true);
   };
   const onMouseLeave = () => {
-    setIsHover(false);
+    setTimeout(() => {
+      setIsHover(false);
+    }, 5000)
   };
 
   return (
-    <>
+    <div>
       <div className="Menu-List"><b>Board List</b></div>
       <div className="AddBoard" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         <div className="AddMenu"><b>Add Board</b></div>
@@ -46,7 +48,7 @@ const AddBoard = () => {
           </>
         }
       </div>
-    </>
+    </div>
   );
 };
 

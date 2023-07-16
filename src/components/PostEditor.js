@@ -4,7 +4,7 @@ import { PostDispatchContext } from "../App";
 import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 
-const PostEditor = ({ isEdit, originData }) => {
+const PostEditor = ({ isEdit, originData, id }) => {
   const contentRef = useRef();
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -25,7 +25,7 @@ const PostEditor = ({ isEdit, originData }) => {
         onPostEdit(originData.id, date, title, content);
       }
     }
-    navigate('/', { replace: true });
+    navigate(`/board/${id}`, { replace: true });
   };
 
   useEffect(() => {
@@ -37,15 +37,15 @@ const PostEditor = ({ isEdit, originData }) => {
   }, [isEdit, originData]);
 
   return (
-    <div>
+    <div className="PostEditor">
       <Header
         headText={isEdit ? "게시글 수정하기" : "새 게시글 작성"}
       />
-      <button onClick={() => navigate(-1)}>뒤로가기</button>
+      <button className="Back-Button" onClick={() => navigate(-1)}>뒤로가기</button>
       <div>
         <section>
-          <h4>날짜</h4>
-          <div>
+          <h4 className="h4_date">날짜</h4>
+          <div className="input_date">
             <input
               value={date}
               onChange={((e) => setDate(e.target.value))}
@@ -56,6 +56,7 @@ const PostEditor = ({ isEdit, originData }) => {
         <section>
           <h4>제목</h4>
           <textarea
+            className="PostEditor title"
             placeholder="제목을 입력하세요."
             ref={contentRef}
             value={title}
@@ -64,8 +65,9 @@ const PostEditor = ({ isEdit, originData }) => {
         </section>
         <section>
           <h4>게시글 내용</h4>
-          <div>
+          <div className="input_box text_wrapper">
             <textarea
+              className="DiaryEditor content"
               placeholder="내용"
               ref={contentRef}
               value={content}

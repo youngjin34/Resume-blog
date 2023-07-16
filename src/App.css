@@ -10,20 +10,20 @@ body {
   margin: 0px;
 }
 
-@media (min-width: 750px) {
+@media (min-width: 850px) {
   .App {
-    width: 900px;
+    width: 1080px;
   }
 }
 
-@media (max-width: 750px) {
+@media (max-width: 850px) {
   .App {
     width: 90vw;
   }
 }
 
 #root {
-  background-color: rgb(224, 228, 240);
+  background-color: rgb(240, 246, 252);
   box-shadow: rgba(58, 58, 104, 0.2) 0px 7px 29px 0px;
 }
 
@@ -52,6 +52,11 @@ header .head_text {
   width: 50%;
   font-size: 40px;
   justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
 
 .AddBoard {
@@ -151,29 +156,117 @@ header .head_text {
   color: wheat;
 }
 
+.Post {
+  font-size: 30px;
+}
+
+.Post_h2 {
+  margin-bottom: 50px;
+}
+
+.PostTitle {
+  border: none;
+  border-radius: 5px;
+
+  padding: 10px 10px;
+
+  background-color: rgb(236, 219, 219);
+  font-size: 25px;
+
+  width: 100%;
+  min-height: 20px;
+}
+
+.PostContent {
+  border: none;
+  border-radius: 5px;
+
+  padding: 10px 10px;
+
+  background-color: rgb(236, 219, 219);
+  font-size: 25px;
+
+  width: 100%;
+  min-height: 300px;
+}
+
+.Post_button_1 {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  padding: 5px 15px 5px 15px;
+  margin-top: 15px;
+  margin-left: 20px;
+  margin-bottom: 60px;
+
+  font-size: 25px;
+
+  white-space: nowrap;
+  font-family: "Nanum Pen Script";
+
+  background-color: rgb(53, 56, 61);
+  color: wheat;
+}
+.Post_button_2 {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  padding: 5px 15px 5px 15px;
+  margin-top: 15px;
+  margin-left: 37%;
+
+  font-size: 25px;
+
+  white-space: nowrap;
+  font-family: "Nanum Pen Script";
+
+  background-color: rgb(53, 56, 61);
+  color: wheat;
+}
+.Post_button_3 {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  padding: 5px 15px 5px 15px;
+  margin-left: 310px;
+  font-size: 25px;
+
+  white-space: nowrap;
+  font-family: "Nanum Pen Script";
+
+  background-color: rgb(53, 56, 61);
+  color: wheat;
+}
+
 .PostList {
   display: flex;
   justify-content: space-between;
+  height: 100%;
+
+  border-left: 1px soild black;
 }
 
 .PostList .Post-Option {
   margin-top: 60px;
+  font-size: 20px;
 }
 
 .Post-Item {
   margin-top: 10px;
   margin-right: 200px;
   font-size: 20px;
+  cursor: pointer;
 }
 
-.PostItem button {
+.Post_Button_1 {
   cursor: pointer;
   border: none;
   border-radius: 5px;
 
   padding: 5px 15px 5px 15px;
-  /* margin-top: 45px; */
-  margin-left: 5px;
 
   font-size: 18px;
 
@@ -182,4 +275,93 @@ header .head_text {
 
   background-color: rgb(53, 56, 61);
   color: wheat;
+}
+
+.Post_Button_2 {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  padding: 5px 15px 5px 15px;
+  margin-left: 10px;
+
+  font-size: 18px;
+
+  white-space: nowrap;
+  font-family: "Nanum Pen Script";
+
+  background-color: rgb(53, 56, 61);
+  color: wheat;
+}
+
+.PostItem button:last-child {
+  margin-left: 10px;
+}
+
+.input_date {
+  font-family: "Nanum Pen Script";
+  border: none;
+  background-color: antiquewhite;
+
+  width: 110px;
+  height: 30px;
+  font-size: 20px;
+
+  margin-bottom: 10px;
+}
+
+.title {
+  font-family: "Nanum Pen Script";
+  font-size: 20px;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 40px;
+  resize: none;
+
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(236, 219, 219);
+
+  padding-top: 5px;
+  padding-left: 12px;
+}
+
+.content {
+  font-family: "Nanum Pen Script";
+  font-size: 20px;
+
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 200px;
+  resize: vertical;
+
+  border: none;
+  border-radius: 5px;
+  background-color: rgb(236, 219, 219);
+
+  padding-top: 8px;
+  padding-left: 12px;
+}
+
+.PostEditor button {
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+
+  padding: 5px 15px 5px 15px;
+  margin-top: 10px;
+  margin-right: 10px;
+
+  font-size: 18px;
+
+  white-space: nowrap;
+  font-family: "Nanum Pen Script";
+
+  background-color: rgb(53, 56, 61);
+  color: wheat;
+}
+
+.h4_date {
+  margin-top: 10px;
 }

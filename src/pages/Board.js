@@ -1,9 +1,8 @@
-import AddBoard from "../components/AddBoard";
+import BoardAdd from "../components/BoardAdd";
 
 const Board = () => {
-
   return <div>
-    <AddBoard />
+    <BoardAdd />
   </div>
 };
 

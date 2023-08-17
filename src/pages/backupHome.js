@@ -1,12 +1,13 @@
+import { Link, useParams } from 'react-router-dom';
 import { useContext, useEffect, useState } from 'react';
-import BoardList from './BoardList';
-import Header from './Header';
+import BoardList from '../components/BoardList';
+import Header from '../components/Header';
 import { BoardStateContext, PostStateContext } from '../App';
-import AddBoard from './AddBoard';
-import PostList from './PostList';
+import BoardAdd from '../components/BoardAdd';
+import PostList from '../components/PostList';
 import { useNavigate, useLocation } from 'react-router-dom';
 
-const Page = () => {
+const Page = ({ boardId }) => {
   const headText = "지니쓰 블로그";
   const boardList = useContext(BoardStateContext);
   const postList = useContext(PostStateContext);
@@ -20,8 +21,8 @@ const Page = () => {
   const [isNew, setIsNew] = useState(false);
 
   useEffect(() => {
-    setIsNew(location.pathname === '/new');
-  }, [location.pathname]);
+    setIsNew(location.pathname === `/new`);
+  }, [location.pathname, boardId]);
 
   useEffect(() => {
     if (boardList.length >= 1) {
@@ -50,30 +51,43 @@ const Page = () => {
     }
   }, [postList, curDate]);
 
+
   return (
     <div className='Home'>
       <div>
-        <a href='/'><Header headText={headText} /></a>
+        <Link to='/'><Header headText={headText} /></Link>
       </div>
       <div>
         <div className='container'>
           <div className='row'>
             <div className='col-4'>
-              <AddBoard />
+              <BoardAdd />
               <BoardList boardList={boardData} />
             </div>
             <div className='Home-position col-6 position-relative List'>
               <div>
-                {location.pathname.includes('/board') && !isNew ? (
-                  <h2 className='position-absolute top-0 start-0'>글 목록</h2>)
-                  : (
+                {location.pathname.includes('/board') && !isNew && boardId ? (
+                  <div>
+                    <h2 className='position-absolute top-0 start-0'>글 목록</h2>
+                    <PostList postList={postData} boardId={boardId} />
+                  </div>
+                ) : (
+                  <div>
                     <h2 className='position-absolute top-0 start-0'>전체 글</h2>
-                  )}
-                {location.pathname.includes('/board') && !isNew && (
-                  <button className="List-Button position-absolute top-0 start-100 translate-middle" onClick={() => navigate('/new')}>새 글 쓰기</button>
+                    <PostList postList={postData} boardId={boardId} />
+                  </div>
+                )}
+                {location.pathname.includes('/board') && !isNew && boardData.length > 0 && (
+                  <button
+                    className="List-Button position-absolute top-0 start-100 translate-middle"
+                    onClick={() => {
+                      navigate(`/new`);
+                    }}
+                  >
+                    새 글 쓰기
+                  </button>
                 )}
               </div>
-              <PostList postList={postData} />
             </div>
           </div>
         </div>

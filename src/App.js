@@ -6,9 +6,10 @@ import Board from './pages/Board';
 import Post from './pages/Post';
 import New from './pages/New';
 import Edit from './pages/Edit';
+import BoardPage from './pages/BoardPage';
+import Page from './pages/Home';
 
 import './App.css';
-import BoardPage from './pages/BoardPage';
 
 const boardReducer = (state, action) => {
   let newState = [];
@@ -39,7 +40,7 @@ const postReducer = (state, action) => {
   switch (action.type) {
     case `CREATE`: {
       const newItem = {
-        ...action.data
+        ...action.data,
       };
       newState = [newItem, ...state];
       break;
@@ -97,14 +98,15 @@ function App() {
     });
   };
 
-  const onPostCreate = (date, title, content) => {
+  const onPostCreate = (date, title, content, boardId) => {
     poDispatch({
       type: `CREATE`,
       data: {
         id: postId.current,
         date: new Date(date).getTime(),
         title,
-        content
+        content,
+        boardId: boardId
       }
     });
     postId.current += 1;
@@ -147,10 +149,30 @@ function App() {
                 <Routes>
                   <Route path='/' element={<Home />} />
                   <Route path='/board' element={<Board />} />
-                  <Route path='/board/:id' element={<BoardPage />} />
-                  <Route path='/new' element={<New />} />
-                  <Route path='/edit/:id' element={<Edit />} />
-                  <Route path='/post/:id' element={<Post />} />
+                  {boardData.map((board) => (
+                    <React.Fragment key={board.id}>
+                      <Route
+                        path={`/`}
+                        element={<Home boardId={board.id} />}
+                      />
+                      <Route
+                        path={`/new`}
+                        element={<New boardId={board.id} />}
+                      />
+                      <Route
+                        path={`/board/:boardId`}
+                        element={<BoardPage boardId={board.id} />}
+                      />
+                      <Route
+                        path={`/edit/:postId`}
+                        element={<Edit boardId={board.id} />}
+                      />
+                      <Route
+                        path={`/post/:postId`}
+                        element={<Post boardId={board.id} />}
+                      />
+                    </React.Fragment>
+                  ))}
                 </Routes>
               </div>
             </BrowserRouter>

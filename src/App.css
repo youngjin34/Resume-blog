@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap');
 
 body {
   background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Nanum Pen Script";
+  font-family: 'Nanum Pen Script';
   min-height: 100vh;
   margin: 0px;
 }
@@ -23,7 +23,7 @@ body {
 }
 
 #root {
-  background-color: rgb(240, 246, 252);
+  background-color: rgb(255, 255, 255);
   box-shadow: rgba(58, 58, 104, 0.2) 0px 7px 29px 0px;
 }
 
@@ -42,10 +42,6 @@ header {
   display: flex;
   align-items: center;
   border-bottom: 1px solid rgb(0, 0, 0);
-}
-
-header > div {
-  /* display: flex; */
 }
 
 header .head_text {
@@ -94,7 +90,7 @@ a {
   font-size: 18px;
 
   white-space: nowrap;
-  font-family: "Nanum Pen Script";
+  font-family: 'Nanum Pen Script';
 }
 
 .MyButton_default {
@@ -113,7 +109,7 @@ a {
 }
 
 .BoardItem {
-  width: 180px;
+  width: 250px;
 }
 
 .BoardItem div {
@@ -150,18 +146,30 @@ a {
   font-size: 18px;
 
   white-space: nowrap;
-  font-family: "Nanum Pen Script";
+  font-family: 'Nanum Pen Script';
 
   background-color: rgb(53, 56, 61);
   color: wheat;
 }
 
 .Post {
-  font-size: 30px;
+  font-size: 23px;
 }
 
 .Post_h2 {
   margin-bottom: 50px;
+  margin-top: 20px;
+}
+
+.Post_date {
+  font-size: 23px;
+  background-color: rgb(250, 245, 245);
+  width: 13%;
+  text-align: center;
+
+  border-radius: 5px;
+
+  margin-top: 20px;
 }
 
 .PostTitle {
@@ -170,7 +178,7 @@ a {
 
   padding: 10px 10px;
 
-  background-color: rgb(236, 219, 219);
+  background-color: rgb(250, 245, 245);
   font-size: 25px;
 
   width: 100%;
@@ -183,11 +191,11 @@ a {
 
   padding: 10px 10px;
 
-  background-color: rgb(236, 219, 219);
+  background-color: rgb(250, 245, 245);
   font-size: 25px;
 
   width: 100%;
-  min-height: 300px;
+  min-height: 450px;
 }
 
 .Post_button_1 {
@@ -195,54 +203,57 @@ a {
   border: none;
   border-radius: 5px;
 
-  padding: 5px 15px 5px 15px;
+  padding: 5px 10px 5px 10px;
   margin-top: 15px;
-  margin-left: 20px;
-  margin-bottom: 60px;
 
-  font-size: 25px;
+  font-size: 18px;
 
   white-space: nowrap;
-  font-family: "Nanum Pen Script";
+  font-family: 'Nanum Pen Script';
 
   background-color: rgb(53, 56, 61);
   color: wheat;
 }
+
 .Post_button_2 {
   cursor: pointer;
   border: none;
   border-radius: 5px;
 
-  padding: 5px 15px 5px 15px;
+  padding: 5px 10px 5px 10px;
   margin-top: 15px;
-  margin-left: 37%;
+  margin-bottom: 20px;
 
-  font-size: 25px;
+  position: relative;
+
+  font-size: 18px;
 
   white-space: nowrap;
-  font-family: "Nanum Pen Script";
+  font-family: 'Nanum Pen Script';
 
   background-color: rgb(53, 56, 61);
   color: wheat;
 }
+
 .Post_button_3 {
   cursor: pointer;
   border: none;
   border-radius: 5px;
 
-  padding: 5px 15px 5px 15px;
-  margin-left: 310px;
-  font-size: 25px;
+  padding: 5px 10px 5px 10px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+
+  font-size: 18px;
 
   white-space: nowrap;
-  font-family: "Nanum Pen Script";
+  font-family: 'Nanum Pen Script';
 
   background-color: rgb(53, 56, 61);
   color: wheat;
 }
 
 .PostList {
-  display: flex;
   justify-content: space-between;
   height: 100%;
 
@@ -254,7 +265,9 @@ a {
   font-size: 20px;
 }
 
-.Post-Item {
+.Post_Item {
+  width: 100%;
+
   margin-top: 10px;
   margin-right: 200px;
   font-size: 20px;
@@ -271,7 +284,7 @@ a {
   font-size: 18px;
 
   white-space: nowrap;
-  font-family: "Nanum Pen Script";
+  font-family: 'Nanum Pen Script';
 
   background-color: rgb(53, 56, 61);
   color: wheat;
@@ -288,7 +301,7 @@ a {
   font-size: 18px;
 
   white-space: nowrap;
-  font-family: "Nanum Pen Script";
+  font-family: 'Nanum Pen Script';
 
   background-color: rgb(53, 56, 61);
   color: wheat;
@@ -298,50 +311,53 @@ a {
   margin-left: 10px;
 }
 
-.input_date {
-  font-family: "Nanum Pen Script";
+.input_date input {
+  font-family: 'Nanum Pen Script';
+  background-color: rgb(250, 245, 245);
   border: none;
-  background-color: antiquewhite;
+  border-radius: 5px;
 
-  width: 110px;
-  height: 30px;
-  font-size: 20px;
+  width: 120px;
+  height: 40px;
+  font-size: 22px;
 
   margin-bottom: 10px;
 }
 
 .title {
-  font-family: "Nanum Pen Script";
-  font-size: 20px;
+  font-family: 'Nanum Pen Script';
+  font-size: 25px;
 
   box-sizing: border-box;
   width: 100%;
-  height: 40px;
+  height: 50px;
   resize: none;
 
   border: none;
   border-radius: 5px;
-  background-color: rgb(236, 219, 219);
+  background-color: rgb(250, 245, 245);
 
   padding-top: 5px;
   padding-left: 12px;
 }
 
 .content {
-  font-family: "Nanum Pen Script";
-  font-size: 20px;
+  font-family: 'Nanum Pen Script';
+  font-size: 25px;
 
   box-sizing: border-box;
   width: 100%;
-  min-height: 200px;
+  /* min-height: 200px; */
+  height: 500px;
   resize: vertical;
 
   border: none;
   border-radius: 5px;
-  background-color: rgb(236, 219, 219);
+  background-color: rgb(250, 245, 245);
 
   padding-top: 8px;
   padding-left: 12px;
+  margin-bottom: 40px;
 }
 
 .PostEditor button {
@@ -351,12 +367,13 @@ a {
 
   padding: 5px 15px 5px 15px;
   margin-top: 10px;
+  margin-bottom: 15px;
   margin-right: 10px;
 
   font-size: 18px;
 
   white-space: nowrap;
-  font-family: "Nanum Pen Script";
+  font-family: 'Nanum Pen Script';
 
   background-color: rgb(53, 56, 61);
   color: wheat;
@@ -364,4 +381,65 @@ a {
 
 .h4_date {
   margin-top: 10px;
+}
+
+.Search_Paging {
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+.Search_Select {
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+
+  height: 32px;
+  background-color: rgb(224, 224, 224);
+
+  margin-right: 10px;
+}
+
+.Search_detail select {
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+
+  height: 32px;
+
+  font-size: 25px;
+  background-color: rgb(224, 224, 224);
+}
+
+.Search_detail input {
+  border: none;
+  border-radius: 5px;
+
+  height: 32px;
+
+  background-color: rgb(224, 224, 224);
+
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.Search button {
+  border: none;
+  border-radius: 5px;
+
+  background-color: rgb(224, 224, 224);
+
+  font-size: 20px;
+}
+
+.Pagination button {
+  margin: 15px 5px 5px 5px;
+  padding: 3px 6px 3px 6px;
+
+  border: none;
+  border-radius: 5px;
+
+  background-color: rgb(224, 224, 224);
+
+  width: 40px;
+  font-size: 20px;
 }
